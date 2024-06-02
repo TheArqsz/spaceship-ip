@@ -35,7 +35,7 @@ spaceship_ip() {
   local un="$(uname)"
   if [ "$un" = "Darwin" ]; then
     if spaceship::exists ifconfig && spaceship::exists route; then
-      _ip="$(ifconfig $(route -n get default | grep 'interface:' | awk '{print $2}') | grep 'inet ' | awk '{print $2}')"
+      _ip="$(ifconfig $(route -n get default | grep 'interface:' | awk -F 'interface:' '{print $2}') | grep 'inet' | awk -F'inet' '{print $2}' | cut -d' ' -f2)"
     else
       return
     fi
@@ -43,7 +43,7 @@ spaceship_ip() {
     if spaceship::exists ip; then
       _ip="$(ip route get 1.1.1.1 | head -1 | awk '{ print $7 }')"
     elif spaceship::exists ifconfig && spaceship::exists route; then
-      _ip="$(ifconfig $(route -n | grep '^0.0.0.0' | head -1 | awk '{print $8}') | grep 'inet ' | awk '{print $2}')"
+      _ip="$(ifconfig $(route -n | grep '^0.0.0.0' | head -1 | awk '{print $8}') | grep 'inet ' | awk -F'inet' '{print $2}' | cut -d' ' -f2)"
     elif spaceship::exists hostname && [[ $SPACESHIP_IP_USE_HOSTNAME == true ]]; then
       _ip="*$(hostname -I | awk '{print $1}')"
     else
