@@ -13,7 +13,7 @@ jobs:
     container: ghcr.io/spaceship-prompt/spaceship-prompt:latest
     steps:
       - name: ⬇️ Checkout Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v1
 
       - name: 🖨 Print Zsh Version
         run: zsh --version

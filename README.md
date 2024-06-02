@@ -14,6 +14,16 @@
   </a>
 </p>
 
+<p align="center">
+<figure>
+    <img src="spaceship-ip-prompt.png" alt="Prompt Screenshot" />
+  <figcaption style="text-align: center">Prompt with <code>*_PREFIX</code> set to <code>':'</code>, <code>*_SUFFIX</code> set to <code>''</code> and <code>*_PROMPT</code> set to <code>''</code> .</figcaption>
+</figure>
+</p>
+
+## Info
+
+This prompt will work on Linux and MacOS. It will choose your primary IP (outgoing to default gateway) - works with VPNs.
 
 ## Installing
 
