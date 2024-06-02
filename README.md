@@ -8,8 +8,8 @@
 </h4>
 
 <p align="center">
-  <a href="https://github.com/TheArqsz/spaceship-ip/actions">
-    <img src="https://img.shields.io/github/actions/workflow/status/spaceship-prompt/spaceship-gradle/ci.yaml?style=flat-square"
+  <a href="https://github.com/TheArqsz/spaceship-ip/actions/workflows/ci.yaml">
+    <img src="https://github.com/TheArqsz/spaceship-ip/actions/workflows/ci.yaml/badge.svg?style=flat-square"
       alt="GitHub Workflow Status" />
   </a>
 </p>
